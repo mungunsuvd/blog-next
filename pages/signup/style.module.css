@@ -1,0 +1,83 @@
+@media all and (min-width: 450px) {
+  .Signup {
+    padding: 60px 0;
+  }
+
+  .Signup form {
+    margin: 0 auto;
+    max-width: 310px;
+  }
+}
+.button {
+  background-color: black;
+  color: lightgray;
+  border-radius: 4px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.jon {
+  text-decoration: darkgrey;
+  font-size: medium;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+  justify-content: center;
+}
+.header {
+  font-size: x-large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  justify-content: center;
+
+  padding: 60px 0;
+  margin-left: 40%;
+  max-width: 300px;
+  max-height: 50px;
+}
+.successmsg {
+  color: #1d3557;
+  background: #8fffab;
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  margin-left: 37vw;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* label,
+input {
+  color: black;
+}
+
+label {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+} */
+
+/* input {
+  border: 2px solid rgba(#1d3557, 0.8);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  padding-left: 1rem;
+  font-size: 1rem;
+} */
+
+.inerror {
+  border-color: #e63946;
+}
+
+.error {
+  color: #e63946;
+  font-size: smaller;
+  margin-top: 0.3rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.disabled-btn {
+  cursor: not-allowed;
+  background: rgba(#1d3557, 0.8);
+}

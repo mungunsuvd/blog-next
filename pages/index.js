@@ -1,20 +1,235 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
+import Head from "next/head";
 
+import MyNavbar from "../components/My-navbar";
+import Grids from "../components/grid-item";
+import List from "../components/list-item";
+import Intro from "../components/intro";
+// import Userpage from "./userpage";
+import Paginationn from "../components/pagination";
+import Chip from "@material-ui/core/Chip";
+import { Card, Row, Col, Container } from "react-bootstrap";
 export default function Home() {
   return (
-    <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-    </Layout>
-  )
+    <div blog-detail-page>
+      <div>
+        <MyNavbar />
+      </div>
+      <div></div>
+      <div>
+        <br />
+        <br />
+
+        <Intro />
+      </div>
+      <br />
+
+      <div>
+        <Container className="text-center">
+          <>
+            <h4>Шилдэг зохиолчид</h4>
+            <Card.Body>
+              <Row>
+                <Col>
+                  <Grids />
+                </Col>
+                <Col>
+                  <Grids />
+                </Col>
+                <Col>
+                  <Grids />
+                </Col>
+              </Row>
+            </Card.Body>
+            {/* 2nd row */}
+            <Card.Body>
+              <Row>
+                <Col>
+                  <Grids />
+                </Col>
+                <Col>
+                  <Grids />
+                </Col>
+                <Col>
+                  <Grids />
+                </Col>
+              </Row>
+            </Card.Body>
+          </>
+        </Container>
+      </div>
+
+      {/* shine niitlel */}
+      <div>
+        <Container>
+          <Row className="text-center">
+            <h5>Шинэ нийтлэлүүд </h5>{" "}
+          </Row>{" "}
+          <Row>
+            <Col sm={8}>
+              <Row>
+                <Col>
+                  <Row>
+                    <Col>
+                      <List />
+
+                      <div className="text-center">
+                        <a href="newsdetail">Цааш унших ... </a>
+                      </div>
+                    </Col>
+                  </Row>
+                  <br />
+                  <Row>
+                    <Col>
+                      <List />
+                      <div className="text-center">
+                        <a href="newsdetail">Цааш унших ... </a>
+                      </div>
+                    </Col>
+                  </Row>
+                  <br />
+                  <Row>
+                    <Col>
+                      <List />
+                      <div className="text-center">
+                        <a href="newsdetail">Цааш унших ... </a>
+                      </div>
+                    </Col>
+                  </Row>
+                  <br />
+                  <Row>
+                    <Col>
+                      <List />
+                      <div className="text-center">
+                        <a href="newsdetail">Цааш унших ... </a>
+                      </div>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            </Col>
+            <Col sm={4}>
+              <h5>Category & Topics</h5>{" "}
+              <Row>
+                <Col xs={3}>
+                  <Chip size="small" label="Health" />
+                </Col>
+                <Col xs={3}>
+                  <Chip size="small" label="Politics" />
+                </Col>
+                <Col xs={3}>
+                  <Chip size="small" label="Society" />
+                </Col>
+                <Col xs={3}>
+                  <Chip size="small" label="Business" />
+                </Col>
+                <Col xs={4}>
+                  <Chip size="small" label="Technology" />
+                </Col>
+                <Col xs={3}>
+                  <Chip size="small" label="Life style" />
+                </Col>
+                <Col xs={3}>
+                  <Chip size="small" label="Art and Culture" />
+                </Col>
+                <Col xs={5}>
+                  <Chip size="small" label="Personal development" />
+                </Col>{" "}
+              </Row>{" "}
+            </Col>
+          </Row>
+          <br />
+          <Card.Text className="text-muted" className="text-center">
+            <Paginationn style={{ color: "black" }} />
+          </Card.Text>
+          <br />
+          <Row>
+            <Col>
+              <Card.Text className="text-muted" className="text-center">
+                <a href="help">Help </a>
+                <a href="about">About </a>
+                <a href="career">Career </a>
+                <a href="connection">Connection </a>
+              </Card.Text>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </div>
+  );
+}
+// {/* <Row md={4}>
+// <Col xs={7}></Col>
+// {/* category and topic */}
+// <Col xs={5}>
+//   <Row>
+//     <h5>Category & Topics</h5>
+//   </Row>
+// </Col>
+// </Row>
+// <br />
+// <Row className="text-center">
+// <Card.Text className="text-muted"></Card.Text>
+// </Row>
+// <br />
+// <Row md={4}>
+// <Col xs={7}>
+//   <Row>
+//     <h5>Шинэ нийтлэлүүд</h5>
+//   </Row>
+
+//   <Row>
+//     <Col>
+//       <List />
+//     </Col>
+//   </Row>
+//   <br />
+//   <Row>
+//     <Col>
+//       <List />
+//     </Col>
+//   </Row>
+//   <br />
+//   <Row>
+//     <Col>
+//       <List />
+//     </Col>
+//   </Row>
+//   <br />
+//   <Row>
+//     <Col>
+//       <List />
+//     </Col>
+//   </Row>
+// </Col>
+// category and topic
+// <Col xs={5}>
+//   <Row>
+//     <Row>
+//       <h5>Category & Topics</h5>
+//     </Row>
+//     <Row>
+//       <Col xs={3}>Health</Col>
+//       <Col xs={3}>Politics</Col>
+//       <Col xs={3}>Society</Col>
+//       <Col xs={3}>Business</Col>
+
+//       <Col xs={4}>Technology</Col>
+//       <Col xs={4}>Life style</Col>
+//       <Col xs={5}>Art and Culture</Col>
+//       <Col xs={7}>Personal development</Col>
+//     </Row>
+//   </Row>
+// </Col>
+// </Row>
+{
+  /* <br />
+<Row className="text-center">
+<Card.Text className="text-muted">
+  <a href="help">Help </a>
+  <a href="about">About </a>
+  <a href="career">Career </a>
+  <a href="connection">Connection </a>
+</Card.Text>
+</Row>
+<br /> */
 }
