@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import React, { useEffect } from "react";
 import MyNavbar from "../components/My-navbar";
 import Grids from "../components/grid-item";
 import List from "../components/list-item";
@@ -8,8 +8,32 @@ import Intro from "../components/intro";
 import Paginationn from "../components/pagination";
 import Chip from "@material-ui/core/Chip";
 import { Card, Row, Col, Container } from "react-bootstrap";
+// import { UserStore } from "../context/userContext";
+import UserContext from "../context/userContext";
+// const App = (props) => {
+//   const userCtx = useContext(UserContext);
+// useEffect(() => {
+//   const token = localStorage.getItem("token");
+//   const email = localStorage.getItem("email");
+//   const expireDate = new Date(localstorage.getItem("expireDate"))
+//   const refreshToken = localStorage.getItem("refreshToken")
+//   if (token) {
+//     if (expireDate > new Date ()) {
+//       props.autoLogin(token, email);
+
+//       props.autoLogoutAfterMillisec(
+//         expireDate.getTime() - new Date().getTime
+//       );
+
+//     }
+//     else {
+//       props.logout();
+//     }
+//   }
+// })
 export default function Home() {
   return (
+    // <UserStore>
     <div blog-detail-page>
       <div>
         <MyNavbar />
@@ -155,81 +179,6 @@ export default function Home() {
         </Container>
       </div>
     </div>
+    /* </UserStore> */
   );
-}
-// {/* <Row md={4}>
-// <Col xs={7}></Col>
-// {/* category and topic */}
-// <Col xs={5}>
-//   <Row>
-//     <h5>Category & Topics</h5>
-//   </Row>
-// </Col>
-// </Row>
-// <br />
-// <Row className="text-center">
-// <Card.Text className="text-muted"></Card.Text>
-// </Row>
-// <br />
-// <Row md={4}>
-// <Col xs={7}>
-//   <Row>
-//     <h5>Шинэ нийтлэлүүд</h5>
-//   </Row>
-
-//   <Row>
-//     <Col>
-//       <List />
-//     </Col>
-//   </Row>
-//   <br />
-//   <Row>
-//     <Col>
-//       <List />
-//     </Col>
-//   </Row>
-//   <br />
-//   <Row>
-//     <Col>
-//       <List />
-//     </Col>
-//   </Row>
-//   <br />
-//   <Row>
-//     <Col>
-//       <List />
-//     </Col>
-//   </Row>
-// </Col>
-// category and topic
-// <Col xs={5}>
-//   <Row>
-//     <Row>
-//       <h5>Category & Topics</h5>
-//     </Row>
-//     <Row>
-//       <Col xs={3}>Health</Col>
-//       <Col xs={3}>Politics</Col>
-//       <Col xs={3}>Society</Col>
-//       <Col xs={3}>Business</Col>
-
-//       <Col xs={4}>Technology</Col>
-//       <Col xs={4}>Life style</Col>
-//       <Col xs={5}>Art and Culture</Col>
-//       <Col xs={7}>Personal development</Col>
-//     </Row>
-//   </Row>
-// </Col>
-// </Row>
-{
-  /* <br />
-<Row className="text-center">
-<Card.Text className="text-muted">
-  <a href="help">Help </a>
-  <a href="about">About </a>
-  <a href="career">Career </a>
-  <a href="connection">Connection </a>
-</Card.Text>
-</Row>
-<br /> */
 }

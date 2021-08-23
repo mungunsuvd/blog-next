@@ -1,19 +1,19 @@
 import Link from "next/Link";
 import Form from "react-bootstrap/Form";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Button from "../../components/button";
 import css from "./style.module.css";
 import axios from "axios";
-// import signupContext from "../../context/signupContext";
+import UserContext from "../../context/userContext";
 
-const Signup = () => {
+const signup = () => {
   const intialValues = {
     phone: "",
     email: "",
     password: "",
     confirm_password: "",
   };
-
+  const ctx = useContext(UserContext);
   const [phone, setPhone] = useState("");
   const [formValues, setFormValues] = useState(intialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -77,8 +77,8 @@ const Signup = () => {
 
     if (!values.password) {
       errors.password = "нууц үг оруулна уу!";
-    } else if (values.password.length < 7) {
-      errors.password = "нууц үг 7-с багагүй тэмдэгт байна";
+    } else if (values.password.length < 8) {
+      errors.password = "нууц үг 8-с багагүй тэмдэгт байна";
     }
 
     if (!values.confirm_password) {
@@ -141,6 +141,7 @@ const Signup = () => {
             type="password"
             name="password"
             id="password"
+            placeholder="том жижиг үсэг тоо тэмдэгт орно"
             value={formValues.password}
             onChange={handleChange}
             className={formErrors.password && "input-error"}
@@ -182,4 +183,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default signup;

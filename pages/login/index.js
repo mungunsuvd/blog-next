@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "../../components/button";
 import css from "./style.module.css";
 import Link from "next/Link";
-export default function Login() {
+export default function login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   function validateForm() {
@@ -12,6 +12,11 @@ export default function Login() {
   function handleSubmit(event) {
     event.preventDefault();
   }
+  // function darah(event) {
+  //   event.();
+
+  // }
+
   return (
     <>
       <div className={css.Login}>
@@ -36,17 +41,13 @@ export default function Login() {
           </Form.Group>
           <br />
           <div className="text-center">
-            <Button
-              className={css.button}
-              value="Login"
-              daragdsan={this.login}
-            />
+            <Button className={css.button} value="Login" />
           </div>
 
           <h6 className={css.jon}>
             <br />
             Бүртгэлгүй юу?
-            <Link href="/signup"> Create an account</Link>{" "}
+            <Link href="/signup"> Create an account</Link>
           </h6>
         </Form>
       </div>

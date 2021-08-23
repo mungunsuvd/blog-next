@@ -1,8 +1,8 @@
 // import React, { useState, useEffect, useRouter } from "react";
 import { useRouter } from "next/router";
-import Navlo from "../../components/navv";
+import Navlo from "../../../components/navv";
 import { Container, Row, Col, Image, Card } from "react-bootstrap";
-import CommentBox from "../../components/CommentBox";
+import CommentBox from "../../../components/CommentBox";
 import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
 
 export default () => {
