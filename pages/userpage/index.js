@@ -9,18 +9,20 @@ export default () => {
   return (
     <div>
       <Navloo />
+
+      <br />
+      <br />
+      <br />
       <div>
         <Container>
-          <Row className="text-center">
-            <Col></Col>
-          </Row>
-          <br />
           {/* list item */}
           <Row>
             <Col sm={8}>
-              <Row>
+              <div className="text-center">
+                {" "}
                 <h5>Шинэ нийтлэлүүд </h5>
-              </Row>
+              </div>
+
               <Row>
                 <Col>
                   <List />
@@ -60,7 +62,7 @@ export default () => {
             {/* grid item */}
 
             <Col sm={4}>
-              <h5>Шилдэг зохиолчид </h5>
+              <h5 className="text-center">Шилдэг зохиолчид </h5>
 
               <Row>
                 <Col>

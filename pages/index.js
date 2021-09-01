@@ -1,39 +1,14 @@
-import Head from "next/head";
 import React, { useEffect } from "react";
 import MyNavbar from "../components/My-navbar";
 import Grids from "../components/grid-item";
 import List from "../components/list-item";
 import Intro from "../components/intro";
-// import Userpage from "./userpage";
 import Paginationn from "../components/pagination";
 import Chip from "@material-ui/core/Chip";
 import { Card, Row, Col, Container } from "react-bootstrap";
-// import { UserStore } from "../context/userContext";
-import UserContext from "../context/userContext";
-// const App = (props) => {
-//   const userCtx = useContext(UserContext);
-// useEffect(() => {
-//   const token = localStorage.getItem("token");
-//   const email = localStorage.getItem("email");
-//   const expireDate = new Date(localstorage.getItem("expireDate"))
-//   const refreshToken = localStorage.getItem("refreshToken")
-//   if (token) {
-//     if (expireDate > new Date ()) {
-//       props.autoLogin(token, email);
 
-//       props.autoLogoutAfterMillisec(
-//         expireDate.getTime() - new Date().getTime
-//       );
-
-//     }
-//     else {
-//       props.logout();
-//     }
-//   }
-// })
 export default function Home() {
   return (
-    // <UserStore>
     <div blog-detail-page>
       <div>
         <MyNavbar />

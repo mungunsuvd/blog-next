@@ -4,17 +4,16 @@ import React, { useState, useEffect, useContext } from "react";
 import Button from "../../components/button";
 import css from "./style.module.css";
 import axios from "axios";
-import UserContext from "../../context/userContext";
 
 const signup = () => {
   const intialValues = {
-    phone: "",
+    phoneNo: "",
     email: "",
-    password: "",
-    confirm_password: "",
+    pass: "",
+    passcheck: "",
   };
-  const ctx = useContext(UserContext);
-  const [phone, setPhone] = useState("");
+
+  const [phoneNo, setphoneNo] = useState("");
   const [formValues, setFormValues] = useState(intialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -24,14 +23,14 @@ const signup = () => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
-  function validateForm() {
-    return phone.lenght >= 8 && email.length > 0 && password.length < 7;
-  }
+  const validateForm = () => {
+    return phoneNo.lenght >= 8 && email.length > 0 && pass.length < 7;
+  };
   const onSubmit = () => {};
 
-  const data = JSON.stringify(formValues);
+  const data = formValues;
   console.log(data, "ene bol striniyfy");
-  // setFormErrors(validate(formValues));
+
   // const AppDa = useContext(signupContext);
   // console.log("==========" + signupContext);
   // const data1 = JSON.parse(data);
@@ -39,8 +38,13 @@ const signup = () => {
 
   const handleSubmit = (e) => {
     console.log(e);
+    const headers = {
+      "Content-Type": "application/json",
+    };
     axios
-      .post("http://192.168.2.44:8001/register", { data })
+      .post("http://localhost:8001/register", data, {
+        headers: headers,
+      })
       .then((result) => {
         console.log(result);
       })
@@ -56,15 +60,15 @@ const signup = () => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
     const nmbr = /^[0-9]+$/;
-    // if (!values.phone) {
-    //   errors.phone = "utasni dugaara oruulna uu!";
-    // } else if (!nmbr.test(values.phone)) {
-    //   errors.phone = "dugaara zuv oruulna uu";
+    // if (!values.phoneNo) {
+    //   errors.phoneNo = "utasni dugaara oruulna uu!";
+    // } else if (!nmbr.test(values.phoneNo)) {
+    //   errors.phoneNo = "dugaara zuv oruulna uu";
     // }
-    if (!nmbr.test(values.phone)) {
-      errors.phone = "utasni dugaar oruul";
-    } else if (values.phone.lenght < 8) {
-      errors.phone = "utasni dugaar 8 orontoi too baina";
+    if (!nmbr.test(values.phoneNo)) {
+      errors.phoneNo = "utasni dugaar oruul";
+    } else if (values.phoneNo.lenght < 8) {
+      errors.phoneNo = "utasni dugaar 8 orontoi too baina";
     } else {
       null;
     }
@@ -75,16 +79,16 @@ const signup = () => {
       errors.email = "имэйл зөв оруулна уу!";
     }
 
-    if (!values.password) {
-      errors.password = "нууц үг оруулна уу!";
-    } else if (values.password.length < 8) {
-      errors.password = "нууц үг 8-с багагүй тэмдэгт байна";
+    if (!values.pass) {
+      errors.pass = "нууц үг оруулна уу!";
+    } else if (values.pass.length < 8) {
+      errors.pass = "нууц үг 8-с багагүй тэмдэгт байна";
     }
 
-    if (!values.confirm_password) {
-      errors.confirm_password = "нууц үг давтан оруулна уу!";
-    } else if (values.confirm_password !== values.password) {
-      errors.confirm_password = "нууц үг таарахгүй байна";
+    if (!values.passcheck) {
+      errors.passcheck = "нууц үг давтан оруулна уу!";
+    } else if (values.passcheck !== values.pass) {
+      errors.passcheck = "нууц үг таарахгүй байна";
     } else {
       null;
     }
@@ -105,22 +109,22 @@ const signup = () => {
         <span className={css.successmsg}>Бүртгэл амжилттай </span>
       )}
       <Form onSubmit={handleSubmit}>
-        <Form.Group size="sm" controlId="phone">
+        <Form.Group size="sm" controlId="phoneNo_user">
           <Form.Label>Утасны дугаар</Form.Label>
           <Form.Control
-            type="phone"
-            name="phone"
-            id="phone"
-            value={formValues.phone}
+            type="phoneNo"
+            name="phoneNo"
+            id="phoneNo"
+            value={formValues.phoneNo}
             onChange={handleChange}
-            className={formErrors.phone && "input-error"}
+            className={formErrors.phoneNo && "input-error"}
           />
-          {formErrors.phone && (
-            <span className={css.error}>{formErrors.phone}</span>
+          {formErrors.phoneNo && (
+            <span className={css.error}>{formErrors.phoneNo}</span>
           )}
         </Form.Group>
 
-        <Form.Group size="sm" controlId="email">
+        <Form.Group size="sm" controlId="email_user0">
           <Form.Label>Цахим шуудан</Form.Label>
           <Form.Control
             type="email"
@@ -135,36 +139,36 @@ const signup = () => {
           )}
         </Form.Group>
 
-        <Form.Group size="sm" controlId="password">
+        <Form.Group size="sm" controlId="pass_user0">
           <Form.Label>Нууц үг</Form.Label>
           <Form.Control
             type="password"
-            name="password"
-            id="password"
+            name="pass"
+            id="pass"
             placeholder="том жижиг үсэг тоо тэмдэгт орно"
-            value={formValues.password}
+            value={formValues.pass}
             onChange={handleChange}
-            className={formErrors.password && "input-error"}
+            className={formErrors.pass && "input-error"}
           />
 
-          {formErrors.password && (
-            <span className={css.error}>{formErrors.password}</span>
+          {formErrors.pass && (
+            <span className={css.error}>{formErrors.pass}</span>
           )}
         </Form.Group>
 
-        <Form.Group size="sm" controlId="password">
+        <Form.Group size="sm" controlId="pass_user1">
           <Form.Label>Нууц үг дахин оруулах </Form.Label>
 
           <Form.Control
             type="password"
-            name="confirm_password"
-            id="confirm_password"
-            value={formValues.confirm_password}
+            name="passcheck"
+            id="passcheck"
+            value={formValues.passcheck}
             onChange={handleChange}
-            className={formErrors.confirm_password && "input-error"}
+            className={formErrors.passcheck && "input-error"}
           />
-          {formErrors.confirm_password && (
-            <span className={css.error}>{formErrors.confirm_password}</span>
+          {formErrors.passcheck && (
+            <span className={css.error}>{formErrors.passcheck}</span>
           )}
         </Form.Group>
         <br />

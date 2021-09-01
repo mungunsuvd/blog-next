@@ -37,3 +37,6 @@ img {
   padding: 40px;
   margin: 10px;
 }
+.profile_tab {
+  justify-content: center;
+}

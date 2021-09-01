@@ -1,10 +1,9 @@
 import { Card, Container, Row, Col } from "react-bootstrap";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import Navbr from "../../components/navv";
+
 export default () => {
   return (
     <div>
-      <Navbr />
       <br />
       <br />
       <br />

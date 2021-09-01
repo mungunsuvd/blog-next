@@ -13,7 +13,7 @@ export default function BasicPagination() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Pagination count={10} />
+      <Pagination count={5} />
     </div>
   );
 }

@@ -3,8 +3,8 @@ import Navloo from "../../components/navv";
 import { Container, Row, Col, Image, Card } from "react-bootstrap";
 import CommentBox from "../../components/CommentBox";
 import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
-import Like from "../../components/like-test";
-import LikeBtn from "../../components/like";
+import Like from "../../components/like";
+
 export default () => {
   return (
     <div>
@@ -50,7 +50,7 @@ export default () => {
               </Row>
               <Row>
                 <Col>
-                  <LikeBtn />
+                  <Like />
                 </Col>
                 <Col>
                   <CommentBox zohiogch="Urnaa" />

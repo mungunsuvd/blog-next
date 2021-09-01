@@ -2,9 +2,8 @@ import { Card, ListGroup, Form } from "react-bootstrap";
 import Profile from "../../components/grid-item";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
-
 import Button from "../../components/button";
-import Nav from "../../components/navv";
+import Nav from "../../components/My-navbar";
 export default () => {
   return (
     <div>
@@ -12,15 +11,15 @@ export default () => {
       <br />
       <br />
       <br />
-
-      <div>
+      <div className="profile_tab">
         <Tabs
           defaultActiveKey="profile"
           id="uncontrolled-tab-example"
           className="mb-3"
+          style={{ width: "15rem" }}
         >
           <Tab eventKey="Profile" title="Profile">
-            <Card style={{ width: "18rem" }}>
+            <Card style={{ width: "15rem" }}>
               <Profile />
               <Card.Body>
                 <ListGroup size="sm" className="list-group-flush">
@@ -44,7 +43,7 @@ export default () => {
             </Card>
           </Tab>
           <Tab eventKey="Security" title="Security">
-            <Card style={{ width: "18rem" }}>
+            <Card style={{ width: "15rem" }}>
               <Card.Body>
                 <ListGroup>
                   <Form.Group className="mb-2" controlId="">

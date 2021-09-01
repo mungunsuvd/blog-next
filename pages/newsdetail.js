@@ -1,19 +1,17 @@
 import Navloo from "../components/My-navbar";
-
 import { Container, Row, Col, Image, Card } from "react-bootstrap";
 import CommentBox from "../components/CommentBox";
+import Like from "../components/like";
 import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
 export default () => {
   return (
     <div>
       <Container>
         <Navloo />
-
         <Card.Body>
           <Card.Title className="text-center">
             <h5>SIMPLE 2.0: ЗЭЭЛИЙН АППЛИКЭЙШНЭЭ ЦӨӨЛ</h5>
           </Card.Title>
-
           <Row>
             <Col md={{ span: 7, offset: 3 }}>
               <Image
@@ -45,7 +43,12 @@ export default () => {
               </Row>
               <br />
               <Row>
-                <CommentBox />
+                <Col>
+                  <Like />
+                </Col>
+                <Col>
+                  <CommentBox zohiogch="Urnaa" />
+                </Col>
               </Row>
             </Col>
           </Row>
